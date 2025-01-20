@@ -1,0 +1,176 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f0f4f8;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.form input[type="text"],
+.form select,
+.form input[type="file"] {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.form button {
+  padding: 10px;
+  background-color: dodgerblue;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.form button:hover {
+  background-color: royalblue;
+}
+
+.rak-buku {
+  margin-top: 20px;
+}
+
+.rak-buku h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #34495e;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.daftar-buku {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+}
+
+.card img {
+  width: auto;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.card h3 {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.card p {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0 10px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.card button {
+  padding: 8px 12px;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: auto;
+  margin-bottom: 10px;
+}
+
+.edit-button {
+  background-color: green;
+}
+
+.edit-button:hover {
+  background-color: darkgreen;
+}
+
+.pindah {
+  background-color: orange;
+}
+
+.pindah:hover {
+  background-color: darkorange;
+}
+
+.hapus {
+  background-color: crimson;
+}
+
+.hapus:hover {
+  background-color: firebrick;
+}
+
+.rak-buku {
+  margin-bottom: 40px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .form input[type="text"],
+  .form select,
+  .form button {
+    font-size: 14px;
+  }
+
+  .daftar-buku {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .card img {
+    width: 100%;
+    height: 250px;
+  }
+}
