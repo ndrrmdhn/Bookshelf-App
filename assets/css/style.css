@@ -1,176 +1,150 @@
-body {
-  font-family: "Arial", sans-serif;
-  background-color: #f0f4f8;
-  color: #333;
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-.container {
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #006b98;
+  color: #fff;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 i {
+  margin-left: 0.5rem;
+}
+
+main {
+  padding: 1rem;
   max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
+  margin: 0 auto;
+}
+
+section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
   background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-  text-align: center;
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #2c3e50;
+h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #006b98;
 }
 
 .form {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-.form input[type="text"],
-.form select,
-.form input[type="file"] {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  font-size: 14px;
+.form div {
+  flex: 1 1 calc(50% - 1rem);
 }
 
-.form button {
-  padding: 10px;
-  background-color: dodgerblue;
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+button {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+input[type="checkbox"] {
+  margin-left: 0.5rem;
+}
+
+button {
+  background-color: #006b98;
   color: #fff;
-  border: none;
-  border-radius: 6px;
   cursor: pointer;
-  font-size: 16px;
+  border: none;
+  transition: background-color 0.3s ease;
 }
 
-.form button:hover {
-  background-color: royalblue;
+button:hover {
+  background-color: #004a6b;
 }
 
-.rak-buku {
-  margin-top: 20px;
-}
-
-.rak-buku h2 {
-  font-size: 18px;
-  margin-bottom: 15px;
-  color: #34495e;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 5px;
-}
-
-.daftar-buku {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-}
-
-.card {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+#incompleteBookList,
+#completeBookList {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 15px;
+  gap: 1rem;
 }
 
-.card img {
-  width: auto;
-  height: 300px;
-  object-fit: cover;
+[data-testid="bookItem"] {
+  padding: 1rem;
+  background-color: #f1f1f1;
+  border-left: 4px solid #006b98;
   border-radius: 4px;
 }
 
-.card h3 {
-  font-size: 16px;
-  font-weight: bold;
-  text-align: center;
-  margin: 10px 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  width: 100%;
+[data-testid="bookItem"] h3 {
+  font-size: 1.2rem;
+  color: #333;
 }
 
-.card p {
-  font-size: 14px;
-  color: #666;
-  margin: 5px 0 10px;
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  width: 100%;
+[data-testid="bookItem"] p {
+  font-size: 0.95rem;
+  margin: 0.5rem 0;
 }
 
-.card button {
-  padding: 8px 12px;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  font-size: 14px;
-  cursor: pointer;
-  margin-top: auto;
-  margin-bottom: 10px;
+[data-testid="bookItem"] div {
+  display: flex;
+  gap: 0.5rem;
 }
 
-.edit-button {
-  background-color: green;
+[data-testid="bookItem"] button {
+  padding: 0.5rem;
+  font-size: 0.9rem;
 }
 
-.edit-button:hover {
-  background-color: darkgreen;
-}
-
-.pindah {
-  background-color: orange;
-}
-
-.pindah:hover {
-  background-color: darkorange;
-}
-
-.hapus {
-  background-color: crimson;
-}
-
-.hapus:hover {
-  background-color: firebrick;
-}
-
-.rak-buku {
-  margin-bottom: 40px;
-}
-
-@media (max-width: 600px) {
-  .container {
-    padding: 15px;
+@media (max-width: 768px) {
+  header {
+    font-size: 1.25rem;
+    padding: 1rem;
   }
 
-  h1 {
-    font-size: 20px;
+  .form div {
+    flex: 1 1 100%;
   }
 
-  .form input[type="text"],
-  .form select,
-  .form button {
-    font-size: 14px;
+  button {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    font-size: 1rem;
   }
 
-  .daftar-buku {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  h2 {
+    font-size: 1.1rem;
   }
 
-  .card img {
-    width: 100%;
-    height: 250px;
+  button {
+    font-size: 0.85rem;
   }
 }
